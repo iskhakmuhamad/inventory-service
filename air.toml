@@ -1,0 +1,26 @@
+# air.toml
+
+# Jalur ke file utama (entry point Go)
+root = "."
+tmp_dir = "tmp"
+bin = "tmp/main.exe"
+
+# File utama aplikasi Go
+main = "cmd/api/main.go"
+
+# Perintah untuk build dan run binary (PowerShell compatible)
+cmd = "go build -o tmp/main.exe cmd/api/main.go && ./tmp/main.exe"
+
+# File/direktori yang dipantau perubahan
+include_ext = ["go", "tpl", "tmpl", "html"]
+exclude_dir = ["tmp", "vendor", "node_modules"]
+
+delay = 1000
+
+# Hanya rebuild kalau `main.go` atau file `.go` lain berubah
+watch = true
+watch_dir = ["."]
+exclude_file = []
+
+# Log
+log = "air.log"

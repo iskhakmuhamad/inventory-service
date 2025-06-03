@@ -5,6 +5,7 @@ import "time"
 type TransactionItem struct {
 	ID            int       `json:"id,omitempty" db:"id"`
 	TransactionID int       `json:"transaksi_id,omitempty" db:"transaksi_id"`
+	ProductName   string    `json:"nama_produk,omitempty" db:"nama_produk"`
 	ProductID     int       `json:"produk_id" db:"produk_id" validate:"required"`
 	Quantity      int       `json:"jumlah" db:"jumlah" validate:"required,min=1"`
 	StockBefore   int       `json:"stok_sebelum,omitempty" db:"stok_sebelum"`

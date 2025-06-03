@@ -102,7 +102,14 @@ func (r *TransactionRepository) GetByID(id int) (*models.TransactionWithDetails,
 // Get all transaction items
 func (r *TransactionRepository) GetTransactionItems(transactionID int) ([]models.TransactionItem, error) {
 	var items []models.TransactionItem
-	query := `SELECT * FROM transaction_items WHERE transaksi_id = ?`
+	query := `
+		SELECT 
+			ti.*, 
+			p.nama_produk AS nama_produk
+		FROM transaction_items ti
+		JOIN products p ON ti.produk_id = p.id
+		WHERE ti.transaksi_id = ?
+	`
 	err := r.db.Select(&items, query, transactionID)
 	return items, err
 }

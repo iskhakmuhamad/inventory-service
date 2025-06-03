@@ -35,7 +35,7 @@ func (ctrl *TransactionController) CreateTransaction(c *gin.Context) {
 
 	// Call service to create transaction
 	if err := ctrl.Service.CreateTransaction(c.Request.Context(), &transaction); err != nil {
-		utils.ErrorResponse(c, http.StatusInternalServerError, err.Error())
+		utils.ErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
 	}
 
