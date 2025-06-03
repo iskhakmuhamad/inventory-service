@@ -1,0 +1,38 @@
+# Binaries
+/bin/
+/build/
+/dist/
+/out/
+/*.exe
+/*.exe~
+/*.dll
+/*.so
+/*.dylib
+
+# Test binaries
+*.test
+
+# Go vendor
+/vendor/
+
+# Dependency directories (if not using Go modules)
+/Godeps/
+
+# IDE/editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Ignore Go modules cache
+go.sum
