@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "08a984d9-660a-47e2-9641-6f5af14ef9cd",
+		"name": "Inventory Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "8203820"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get Admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/admin/12"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Admin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nama_depan\": \"Fani\",\n  \"nama_belakang\": \"Putri\",\n  \"email\": \"riskafaniputri@example.com\",\n  \"tanggal_lahir\": \"1990-01-01\",\n  \"jenis_kelamin\": \"P\",\n  \"password\": \"password1234\"\n}"
+						},
+						"url": "http://localhost:8080/api/v1/admin/12"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/admin/12"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nama_depan\": \"John\",\n  \"nama_belakang\": \"Knedyy\",\n  \"email\": \"john@example.com\",\n  \"tanggal_lahir\": \"1990-01-01\",\n  \"jenis_kelamin\": \"L\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": "http://localhost:8080/api/v1/admin/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiZXhwIjoxNzQ5MDAxODIyLCJpYXQiOjE3NDg5MTU0MjIsInN1YiI6IjEifQ.86CllFNGOGFKpFKqfcZGZrbvSiw70YB5Q4SyBykLReI"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nama_kategori\": \"Toys\",\n  \"deskripsi_kategori\": \"Children toys\"\n}"
+						},
+						"url": "http://localhost:8080/api/v1/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/categories/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nama_kategori\": \"Home Appliances\",\n  \"deskripsi_kategori\": \"Home and kitchen appliances.\"\n}"
+						},
+						"url": "http://localhost:8080/api/v1/categories/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/categories/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nama_produk\": \"Steel\",\n  \"deskripsi_produk\": \"Steel Gate\",\n  \"gambar_produk\": \"https://www.bing.com/images/search?view=detailV2&ccid=Ii6xnYBI&id=9C148DF375E03DEC154505AA134AB416F14D432F&thid=OIP.Ii6xnYBIAtct0WGMly8ICAHaEK&mediaurl=https%3a%2f%2feduinput.com%2fstorage%2f2023%2f11%2fURL-with-Query-String-as-an-example-of-URL-1024x576.webp&exph=576&expw=1024&q=sample+image+url&simid=608047652352954150&FORM=IRPRST&ck=E9812BAAC8DDC0996FF97ADED1906BF0&selectedIndex=3&itb=0\",\n  \"kategori_produk_id\": 3,\n  \"stok_produk\": 50\n}"
+						},
+						"url": "http://localhost:8080/api/v1/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/products/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nama_produk\": \"Xiomi\",\n  \"deskripsi_produk\": \"Xiaomi Redmi Note 14 Pro\",\n  \"gambar_produk\": \"https://www.bing.com/images/search?view=detailV2&ccid=Ii6xnYBI&id=9C148DF375E03DEC154505AA134AB416F14D432F&thid=OIP.Ii6xnYBIAtct0WGMly8ICAHaEK&mediaurl=https%3a%2f%2feduinput.com%2fstorage%2f2023%2f11%2fURL-with-Query-String-as-an-example-of-URL-1024x576.webp&exph=576&expw=1024&q=sample+image+url&simid=608047652352954150&FORM=IRPRST&ck=E9812BAAC8DDC0996FF97ADED1906BF0&selectedIndex=3&itb=0\",\n  \"kategori_produk_id\": 2,\n  \"stok_produk\": 150\n}"
+						},
+						"url": "http://localhost:8080/api/v1/products/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/product/4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"jenis_transaksi\": \"stock_in\",\n  \"keterangan\": \"terjual pagar besi\",\n  \"items\": [\n    {\n      \"produk_id\": 8,\n      \"jumlah\": 100\n    },\n    {\n      \"produk_id\": 7,\n      \"jumlah\": 50\n    }\n  ]\n}\n"
+						},
+						"url": "http://localhost:8080/api/v1/transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Get History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/transactions/history"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction Product History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions/by-product?product_id=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"by-product"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nama_depan\": \"Muhamad\",\n  \"nama_belakang\": \"Iskhak\",\n  \"email\": \"muhamadiskhaktesting@gmail.com\",\n  \"tanggal_lahir\": \"1999-05-18\",\n  \"jenis_kelamin\": \"L\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": "http://localhost:8080/api/v1/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": "http://localhost:8080/api/v1/profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nama_depan\": \"Muhamad\",\n  \"nama_belakang\": \"Iskhak Test\",\n  \"email\": \"muhamadiskhaktest@gmail.com\",\n  \"tanggal_lahir\": \"1999-05-18\",\n  \"jenis_kelamin\": \"L\",\n  \"password\": \"testing123\"\n}"
+				},
+				"url": "http://localhost:8080/api/v1/admin/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"muhamadiskhaktest@gmail.com\",\n  \"password\": \"testing123\"\n}"
+				},
+				"url": "http://localhost:8080/api/v1/admin/login"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11aGFtYWRpc2toYWt0ZXN0QGdtYWlsLmNvbSIsImV4cCI6MTc0OTAzNDM2OCwiaWF0IjoxNzQ4OTQ3OTY4LCJzdWIiOiIxMSJ9.XlrnssFSpLs4KMtPLOGdWfbgFkXBXS_dxg1i-jMEBeI"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
