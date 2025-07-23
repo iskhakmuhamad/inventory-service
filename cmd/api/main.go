@@ -81,6 +81,12 @@ func setupRoutes(r *gin.Engine, adminCtrl *controllers.AdminController, category
 	// Public routes
 	api.POST("/admin/register", adminCtrl.CreateAdmin)
 	api.POST("/admin/login", adminCtrl.Login)
+	api.GET("/health", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"status": "ok",
+			"data":   "success hit endpoint",
+		})
+	})
 
 	// Protected routes
 	protected := api.Group("")
